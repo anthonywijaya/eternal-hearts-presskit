@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- example file containing base tags -->
+
+<game>	
+	<title>Eternal Hearts: Curse of the Endless</title>
+	<website>eternalheartsgame.com</website>
+	<based-in>Jakarta, Indonesia</based-in>
+	
+	<press-contact>eternalheartsgame@gmail.com</press-contact>
+	<platforms>PC / Nintendo Switch</platforms>
+	<release-date>2023</release-date>
+
+	<socials>
+		<social>
+			<name>https://twitter.com/awjya</name>
+			<link>https://twitter.com/awjya</link>
+		</social>
+		<social>
+			<name>https://facebook.com/awjya</name>
+			<link>https://facebook.com/awjya</link>
+		</social>
+	</socials>
+
+	<description>
+		ETERNAL HEARTS: Curse of the Endless is an action deckbuilding rogue-like set in a classic fantasy world where each battle lets you switch between intense, real-time action and time-stopping tactical breathers. Absorb your enemies' powers, liberate the souls of your predecessors and finally, end your curse.
+	</description>
+
+	<features>
+		<feature>A unique battle system that combines the "carefully picking out cards" aspect in card games and "bullet hell" aspect in action games. Freely switch between intense, real-time action and time-stopping tactical breathers. </feature>
+		<feature>Deckbuilding with 100+ fully animated Arts.</feature>
+		<feature>Liberate 5 corrupted legendary heroes and get their help in conquering the darkness.</feature>
+		<feature>Procedurally generated map and levels for hundreds of unique encounters.</feature>
+		<feature>Roguelike style infinite replayability.</feature>
+	</features>
+		
+	<histories>
+		<history>
+			<text>ETERNAL HEARTS: Curse of the Endless started development in April 2021, with the aim of introducing a fresher take on the battle system from the Megaman Battle Network franchise and modern pixel art graphics. It started soon after Capcom's MMBN 20th anniversary, which was another year of "no news of Megaman Battle Network", and so he decided to take it on his own hand with his own take of the genre. </text>
+		</history>
+	</histories>
+		
+	<trailers>
+		<trailer>
+			<name>Eternal Hearts: Curse of the Endless - Early Announce Trailer</name>
+			<youtube>hectC6PVEMc</youtube>
+		</trailer>
+	</trailers>
+	
+<!--	<awards>-->
+<!--		<award>-->
+<!--			<description>Winner in this highly relevant contest.</description>-->
+<!--			<info>Award Location, 20 October, 1989</info>-->
+<!--		</award>-->
+<!--		<award>-->
+<!--			<description>Nomination for this prestigious award.</description>-->
+<!--			<info>Award Ceremony, 4 December, 1991</info>-->
+<!--		</award>-->
+<!--		<award>-->
+<!--			<description>Winner in this highly relevant contest.</description>-->
+<!--			<info>Award Location, 20 October, 1989</info>-->
+<!--		</award>-->
+<!--		<award>-->
+<!--			<description>Nomination for this prestigious award.</description>-->
+<!--			<info>Award Ceremony, 4 December, 1991</info>-->
+<!--		</award>-->
+<!--	</awards>-->
+<!--	-->
+<!--	<quotes>-->
+<!--		<quote>-->
+<!--			<description>This is a rather insignificant quote by a highly important person.</description>-->
+<!--			<name>Person Name</name>-->
+<!--			<website>Website</website>-->
+<!--			<link>http://www.website.com/</link>-->
+<!--		</quote>-->
+<!--		<quote>-->
+<!--			<description>An extremely positive quote from a rather insignificant person. Also great.</description>-->
+<!--			<name>Some Guy</name>-->
+<!--			<website>This Page Is Visited By 12 Visitors A Month</website>-->
+<!--			<link>http://geocities.blog.com/</link>-->
+<!--		</quote>-->
+<!--		<quote>-->
+<!--			<description>I pretend to love this game even though I do not actually understand it.</description>-->
+<!--			<name>Pretentious Bastard</name>-->
+<!--			<website>Artsy Page</website>-->
+<!--			<link>http://art.tumblr.com/</link>-->
+<!--		</quote>-->
+<!--		<quote>-->
+<!--			<description>HOLY SHIT SO AMAZING</description>-->
+<!--			<name>Caps Guy</name>-->
+<!--			<website>Angry Review</website>-->
+<!--			<link>http://thispage.net/angrytube</link>-->
+<!--		</quote>-->
+<!--	</quotes>-->
+	
+	<press-can-request-copy>TRUE</press-can-request-copy> <!-- can be true or false -->
+	<monetization-permission>monetize</monetization-permission> <!-- can be: 	false (no video allowed),
+																			 	ask (permission on case-per-case basis),
+																			 	non-commercial (no monetization allowed),
+																			 	monetize (full permission) -->	
+<!--	<additionals>-->
+<!--		<additional>-->
+<!--			<title>Company Link #1</title>-->
+<!--			<description>This link is a link that might be useful. You can check it out at</description>-->
+<!--			<link>http://somemusicsite.com/thislink</link>-->
+<!--		</additional>-->
+<!--	</additionals>-->
+	
+	<credits>
+		<credit>
+			<person>Anthony Wijaya</person>
+			<role>Game Designer, Developer, Pixel Artist</role>
+		</credit>
+<!--		<credit>-->
+<!--			<person>Oliver Twist</person>-->
+<!--			<website>http://www.olivertwist.com</website>-->
+<!--			<role>Artist, Freelancer</role>-->
+<!--		</credit>-->
+<!--		<credit>-->
+<!--			<person>Jane Doette</person>-->
+<!--			<website>http://www.olivertwist.com</website>-->
+<!--			<role>Music, Freelancer</role>-->
+<!--		</credit>-->
+	</credits>
+	
+	<contacts>
+		<contact>
+			<name>Inquiries</name>
+			<mail>eternalhearts@gmail.com</mail>
+		</contact>
+		<contact>
+			<name>Twitter</name>
+			<link>https://twitter.com/awjya</link>
+		</contact>
+		<contact>
+			<name>Facebook</name>
+			<link>https://facebook.com/awjya</link>
+		</contact>
+		<contact>
+			<name>Web</name>
+			<link>https://eternalheartsgame.com</link>
+		</contact>
+		<contact>
+			<name>Anthony Wijaya</name>
+			<link>https://anthonywijaya.com</link>
+		</contact>
+	</contacts>
+</game>
