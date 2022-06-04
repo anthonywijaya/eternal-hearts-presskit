@@ -30,6 +30,6 @@ jobs:
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v4
       with:
-        branch: gh-pages
+        branch: master
         folder: output
         token:  ${{ secrets.ACCESS_TOKEN }}
