@@ -72,6 +72,12 @@ foreach( $xml->children() as $child )
 		case("website"):
 			define("COMPANY_WEBSITE", $child);
 			break;
+        case("platforms"):
+            define("PLATFORMS", $child);
+            break;
+        case("release-date"):
+            define("RELEASE_DATE", $child);
+            break;
 		case("press-contact"):
 			define("COMPANY_CONTACT", $child);
 			break;
@@ -254,14 +260,18 @@ echo '					<div class="uk-grid">
 						<div class="uk-width-medium-2-6">
 							<h2 id="factsheet">'. tl('Factsheet') .'</h2>
 							<p>
-								<strong>'. tl('Developer:') .'</strong><br/>
+								<strong>'. tl('Game:') .'</strong><br/>
 								<a href="">'. COMPANY_TITLE .'</a><br/>
 								'. tl('Based in %s', COMPANY_BASED) .'
 							</p>
 							<p>
-								<strong>'. tl('Founding date:') .'</strong><br/>
-								'. COMPANY_DATE .'
-							</p>
+                                <strong>'. tl('Target Release Date:') .'</strong><br/>
+                                '. RELEASE_DATE .'<br/>
+                            </p>
+							<p>
+                                <strong>'. tl('Target Platforms:') .'</strong><br/>
+                                '. PLATFORMS .'<br/>
+                            </p>
 							<p>
 								<strong>'. tl('Website:') .'</strong><br/>
 								<a href="'. COMPANY_WEBSITE .'">'. parseLink(COMPANY_WEBSITE) .'</a>
@@ -286,19 +296,7 @@ for( $i = 0; $i < count($socials); $i++ )
 }
 
 echo '							</p>
-							<p>
-							<strong>'. tl('Releases:') .'</strong><br />';
-
-if ($handle = opendir('.')) {
-	while (false !== ($entry = readdir($handle))) {
-		if ($entry != "." && $entry != ".." && $entry != "lang" && substr($entry,0,1) != "_" && strpos($entry, ".") === FALSE && substr($entry,-4) != ".log" && substr($entry,0,6) != "images" && substr($entry,0,8) != "trailers" && substr($entry,0,9) != "error_log") {
-			echo '<a href="'.$entry . str_replace('?', '&', $languageQuery).'">'.ucwords(str_replace("_", " ", $entry)).'</a><br />';
-		}
-	}
-}
-closedir($handle);
-
-echo '							</p>
+							
 							<p>';
 
 if( count($address) > 0 )
@@ -311,10 +309,7 @@ if( count($address) > 0 )
 }
 
 echo'							</p> 
-							<p>
-								<strong>'. tl('Phone:') .'</strong><br/>
-								'. COMPANY_PHONE .'
-							</p>
+							
 						</div>
 						<div class="uk-width-medium-4-6">
 							<h2 id="description">'. tl('Description') .'</h2>
@@ -334,19 +329,24 @@ for( $i = 0; $i < count($histories); $i++ )
 <p>'.$text.'</p>';
 }
 
-echo '							<h2 id="projects">'. tl('Projects') .'</h2>
+echo '							<h2>'. tl('Features'). '</h2>
 							<ul>';
 
-if ($handle = opendir($games_location)) {
-	while (false !== ($entry = readdir($handle))) {
-		if ($entry != "." && $entry != ".." && $entry != "lang" && substr($entry,0,1) != "_" && strpos($entry, ".") === FALSE && substr($entry,-4) != ".log" && substr($entry,0,6) != "images" && substr($entry,0,8) != "trailers" && substr($entry,0,9) != "error_log") {
-			echo '<li><a href="'.$entry. str_replace('?', '&', $languageQuery).'">'.ucwords(str_replace("_", " ", $entry)).'</a></li>';
-		}
-	}
+for( $i = 0; $i < count($features); $i++ )
+{
+	echo '<li>'.$features[$i].'</li>';
 }
+
+echo '							</ul>';
+
+echo '							<h2 id="projects">'. tl('Previous Projects') .'</h2>
+							<ul>';
+
+			echo '<li><a href="https://kadoken.itch.io/life-in-the-abyss">Life in the Abyss</a></li>';
+
 closedir($handle);
 
-echo '							</ul>
+echo '							</ul></br>
 						</div>
 					</div>
 
@@ -477,46 +477,57 @@ if( file_exists("images/logo.zip") )
 }
 
 echo '<div class="uk-grid images">';
-
-if( file_exists('images/logo.png') ) {
-	echo '<div class="uk-width-medium-1-2"><a href="images/logo.png"><img src="images/logo.png" alt="logo" /></a></div>';
+if ($handle = opendir('images/logos'))
+{
+	/* This is the correct way to loop over the directory. */
+	while (false !== ($entry = readdir($handle)))
+	{
+		if( substr($entry,-4) == ".png" || substr($entry,-4) == ".gif" )
+		{
+		    echo '<div class="uk-width-medium-1-2"><a href="images/logos/'. $entry .'"><img src="images/logos/'.$entry.'" alt="'.$entry.'" /></a></div>';
+		}
+	}
 }
-
-if( file_exists('images/icon.png') ) {
-	echo '<div class="uk-width-medium-1-2"><a href="images/icon.png"><img src="images/icon.png" alt="logo" /></a></div>';
-}
+// 
+// if( file_exists('images/logo.png') ) {
+// 	echo '<div class="uk-width-medium-1-2"><a href="images/logo.png"><img src="images/logo.png" alt="logo" /></a></div>';
+// }
+// 
+// if( file_exists('images/icon.png') ) {
+// 	echo '<div class="uk-width-medium-1-2"><a href="images/icon.png"><img src="images/icon.png" alt="logo" /></a></div>';
+// }
 
 echo '</div>';
 
-if( !file_exists('images/logo.png') && !file_exists('images/icon.png')) {
-	echo '<p>'. tlHtml('There are currently no logos or icons available for %s. Check back later for more or <a href="#contact">contact us</a> for specific requests!', COMPANY_TITLE) .'</p>';
-}
+// if( !file_exists('images/logo.png') && !file_exists('images/icon.png')) {
+// 	echo '<p>'. tlHtml('There are currently no logos or icons available for %s. Check back later for more or <a href="#contact">contact us</a> for specific requests!', COMPANY_TITLE) .'</p>';
+// }
 
 echo '					<hr>';
-
-if( count( $awards > 0 ) )
-{
-	echo('<h2 id="awards">'. tl('Awards & Recognition') .'</h2>
-					<ul>');
-
-for( $i = 0; $i < count($awards); $i++ )
-{
-	$description = $info = "";
-
-	foreach( $awards[$i]['award']->children() as $child )
-	{
-		if( $child->getName() == "description" ) {
-			$description = $child;
-		} else if( $child->getName() == "info" ) {
-			$info = $child;
-		}
-	}
-
-	echo '<li>"'.$description.'" - <cite>'.$info.'</cite></li>';
-}
-
-echo('</ul><hr>');
-}
+// 
+// if( count( $awards > 0 ) )
+// {
+// 	echo('<h2 id="awards">'. tl('Awards & Recognition') .'</h2>
+// 					<ul>');
+// 
+// for( $i = 0; $i < count($awards); $i++ )
+// {
+// 	$description = $info = "";
+// 
+// 	foreach( $awards[$i]['award']->children() as $child )
+// 	{
+// 		if( $child->getName() == "description" ) {
+// 			$description = $child;
+// 		} else if( $child->getName() == "info" ) {
+// 			$info = $child;
+// 		}
+// 	}
+// 
+// 	echo '<li>"'.$description.'" - <cite>'.$info.'</cite></li>';
+// }
+// 
+// echo('</ul><hr>');
+// }
 
 if( count($quotes) > 0 )
 {
